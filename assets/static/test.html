@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>*{font-size:50px;}</style>
+<button onclick="callFlutter()">callFlutter</button>
+<p id="p1" style="visibility:hidden;">
+    Flutter代码调用了JS方法.
+</p>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://cdn.amazeui.org/amazeui/2.5.0/js/amazeui.min.js"></script>
+<script type="text/javascript">
+function callJS(message){
+document.getElementById("p1").style.visibility = message;
+}
+
+</script>
+<script type="text/javascript">
+function callFlutter(){
+window.jsBridge?.postMessage('js call flutter',"asdadddasda");
+}
+
+</script>
+</body>
+</html>
+
